@@ -1,18 +1,10 @@
 // load the http module
-var http = require('http'),
-    fs = require('fs');
-
-fs.readFile('./index.html', function (err, html) {
-    if (err) {
-        throw err;
-    }
-
+var http = require('http');
+   
 // configure our HTTP server
 var server = http.createServer(function (request, response) {
     response.writeHead(200, { "Content-Type": "text/plain" });
-//    response.end("Hello world new\n");
-    response.write(html);
-    response.end();
+    response.end("Hello world new\n");
 });
 
 // listen on localhost:8000
